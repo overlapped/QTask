@@ -1,6 +1,6 @@
 # QTask
 
-[![CI](https://github.com/yourusername/qtask/workflows/CI/badge.svg)](https://github.com/yourusername/qtask/actions)
+[![QTask 1.0.0](https://github.com/overlapped/QTask/actions/workflows/build.yml/badge.svg?branch=main)](https://github.com/overlapped/QTask/actions/workflows/build.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 [![Qt6](https://img.shields.io/badge/Qt-6.0+-green.svg)](https://www.qt.io)
 [![C++17](https://img.shields.io/badge/C%2B%2B-17-blue.svg)](https://en.cppreference.com/w/cpp/17)
