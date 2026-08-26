@@ -1,0 +1,17 @@
+@PACKAGE_INIT@
+
+set_and_check(QTASK_INCLUDE_DIR "@PACKAGE_CMAKE_INSTALL_INCLUDEDIR@")
+set_and_check(QTASK_LIBRARY_DIR "@PACKAGE_CMAKE_INSTALL_LIBDIR@")
+
+find_dependency(Qt6 REQUIRED COMPONENTS Core Concurrent)
+find_dependency(QSignalWaiter REQUIRED)
+
+include("${CMAKE_CURRENT_LIST_DIR}/QTaskTargets.cmake")
+
+if(NOT TARGET QTask::QTask)
+    add_library(QTask::QTask ALIAS QTask)
+endif()
+
+set(QTask_FOUND TRUE)
+set(QTASK_FOUND TRUE)
+set(QTASK_VERSION "@PROJECT_VERSION@")
