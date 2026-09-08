@@ -65,7 +65,7 @@ signals:
     void finished();
     void finished(const QVariant& result);
     void cancelled();
-    void taskError(const QString& message);  // Переименовано, чтобы избежать конфликта
+    void taskError(const QString& message);
     void progress(int percent);
 
 protected:

@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.16)
-project(QTask VERSION 1.0.0 LANGUAGES CXX)
+project(QTask VERSION 1.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
@@ -45,6 +45,8 @@ target_sources(QTask
         src/qfunctiontask.cpp
         src/qslottask.cpp
         src/qtasklauncher.cpp
+        src/qtaskchain.cpp
+#        src/qtaskscheduler.cpp
         include/qtask/qtask.h
         include/qtask/qtask_impl.h
         include/qtask/qfunctiontask.h
@@ -52,6 +54,8 @@ target_sources(QTask
         include/qtask/qtasklauncher.h
         include/qtask/qtask_global.h
         include/qtask/qtask_forward.h
+        include/qtask/qtaskchain.h
+#        include/qtask/qtaskscheduler.h
 )
 
 target_include_directories(QTask
@@ -111,6 +115,8 @@ install(FILES
     include/qtask/qtasklauncher.h
     include/qtask/qtask_global.h
     include/qtask/qtask_forward.h
+    include/qtask/qtaskchain.h
+    include/qtask/qtaskscheduler.h
     DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/qtask
 )
 

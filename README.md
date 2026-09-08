@@ -166,3 +166,31 @@ QTimer::singleShot(1000, [task]() {
 
 int result = task->waitForResult().toInt();
 ```
+
+## QTaskChain
+
+```cpp
+auto chain = QTaskChain::create()
+    ->then([]() -> QVariant { return 100; })
+    ->thenWithInput([](const QVariant& v) -> QVariant { 
+        return v.toInt() * 2; 
+    })
+    ->thenWithInput([](const QVariant& v) -> QVariant { 
+        return v.toInt() + 10; 
+    });
+
+chain->start();
+int result = chain->waitForResult().toInt(); // 210
+```
+
+## QTaskScheduler
+
+```cpp
+auto scheduler = QTaskScheduler::create()
+    ->add([]() -> QVariant { return task1(); })
+    ->add([]() -> QVariant { return task2(); })
+    ->add([]() -> QVariant { return task3(); });
+
+scheduler->start();
+scheduler->waitForResult();
+```
